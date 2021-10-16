@@ -1,18 +1,33 @@
 
+class Usuario {
+
+    constructor(nombre) {
+    this.nombre = nombre;
+        }
+
+    saludar() {
+    alert(`Hola! ${this.nombre}, Bienvenida!`);
+    }
+
+}
+const nUsuario = new Usuario('Renata Cardoso');
+nUsuario.saludar();
+
+/*
 let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
-alert("Hola! Bienvenido, estamos en el mes de " + meses[09] +"! ya podes agregar nuevos Gastos!");
+alert("Bienvenido, estamos en el mes de " + meses[09] +"! ya podes agregar nuevos Gastos!");*/
 
 function calcularGasto() {
     let gasto =  parseInt(prompt("Cantidad de gastos que desea sumar: "));
-    let vetor = new Array(gasto);
+    let vector = new Array(gasto);
 
     // recorriendo el array
     for(let count=0; count<gasto; count++)
-    vetor[count] = parseFloat( prompt("Valor del Gasto $" + ":") )
+    vector[count] = parseFloat( prompt("Valor del Gasto $" + ":") )
     
     // Somando todos los elementos
-    let soma = vetor.reduce((v, g) => v + g,0);
+    let soma = vector.reduce((v, g) => v + g,0);
     
     document.querySelector("#result").innerHTML = `
         <h2>Cantidad de Gastos sumados: ${gasto}</h2>
@@ -37,4 +52,27 @@ function xNombre( a, z ) {
     return a.localeCompare( z ); //Comparacion de string con el metodo localeCompare()
 }
 } 
+
+//class
+
+/*
+class Gastos {
+    constructor(ano, mes, dia, tipo, descripcion, valor) {
+        this.ano = ano
+        this.mes = mes
+        this.dia = dia
+        this.tipo = tipo
+        this.descripcion = descripcion
+        this.valor = valor
+    }
+}
+
+function registrarGasto() {
+
+	const gastos = new Gastos(
+	gastos.push(Gastos)
+	)
+    
+}
+*/
 
