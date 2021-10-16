@@ -3,17 +3,6 @@ let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Ag
 
 alert("Hola! Bienvenido, estamos en el mes de " + meses[09] +"! ya podes agregar nuevos Gastos!");
 
-
-const cuentas =  [
-{  id: 1,  producto: "Agua", precio: 300 },
-{  id: 2,  producto: "Internet", precio: 2800 },
-{  id: 3,  producto: "Energia"  , precio: 250},
-{  id: 4,  producto: "Celular" , precio: 1700}];
-
-const cuentasBaratas = cuentas.filter(cuentas => cuentas.precio < 1000); 
-console.log(cuentasBaratas);
-
-
 function calcularGasto() {
     let gasto =  parseInt(prompt("Cantidad de gastos que desea sumar: "));
     let vetor = new Array(gasto);
@@ -30,8 +19,22 @@ function calcularGasto() {
         <h2>Total: $${soma}</h2>`;
 } 
 
+//Incluida la funcion agregarGasto() ordenando las cuentas por nombre para usar el method sort: https://www.w3schools.com/js/js_array_sort.asp
+
 function agregarGasto() {
-alert("Ops! Esta funcion todavia no esta funcionando!")
-return
-} //voy agregar en la proxima entrega cuando sea posible usar eventos y DOM
+    let nombrePrompt = 4,
+    nombre         = [ ];
+
+while( nombrePrompt-- ) {
+    nombre.push( prompt('Insira el nombre de Gasto, ej: "Agua"') );
+}
+
+nombre.sort( xNombre );
+document.querySelector("#msg").innerHTML = `
+<h2>Agregaste las cuentas a seguir, ordenamos por orden alfabético: ${nombre}</h2>`;
+
+function xNombre( a, z ) {
+    return a.localeCompare( z ); //Comparacion de string con el metodo localeCompare()
+}
+} 
 
