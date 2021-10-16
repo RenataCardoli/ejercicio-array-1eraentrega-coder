@@ -26,7 +26,7 @@ function agregarGasto() {
     nombre         = [ ];
 
 while( nombrePrompt-- ) {
-    nombre.push( prompt('Insira el nombre de Gasto, ej: "Agua"') );
+    nombre.push( prompt('Insira el nombre del Gasto, ej: "Agua"') );
 }
 
 nombre.sort( xNombre );
